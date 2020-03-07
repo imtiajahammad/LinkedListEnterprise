@@ -71,5 +71,37 @@ namespace LinkedListEnterprise
             }
             return count;
         }
+        public int SearchNode(int data)
+        {
+            int count = 0;
+            Node temp = headNode;
+            while (temp != null)
+            {
+                if (temp.data == data)
+                {
+                    count++;
+                }
+                temp = temp.next;
+            }
+            return count;
+        }
+        public bool InsertionInBetweenNodes(int data,int firstNode,int endNode)
+        {
+            Node temp = headNode;
+            bool result = false;
+            while (temp != null)
+            {
+                if(temp.data == firstNode && temp.next.data == endNode)
+                {
+                    Node newNode = new Node(data);
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                    result = true;
+                    break;
+                }
+                temp = temp.next;
+            }
+            return result;
+        }
     }
 }
