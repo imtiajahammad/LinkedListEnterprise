@@ -89,17 +89,146 @@ namespace LinkedListEnterprise
         {
             Node temp = headNode;
             bool result = false;
-            while (temp != null)
+            if(temp is null)
             {
-                if(temp.data == firstNode && temp.next.data == endNode)
+                headNode = new Node(data);
+            }
+            else
+            {
+                while (temp != null)
                 {
-                    Node newNode = new Node(data);
-                    newNode.next = temp.next;
-                    temp.next = newNode;
-                    result = true;
-                    break;
+                    if (temp.data == firstNode && temp.next.data == endNode)
+                    {
+                        Node newNode = new Node(data);
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        result = true;
+                        break;
+                    }
+                    temp = temp.next;
                 }
-                temp = temp.next;
+            }
+
+            return result;
+        }
+        public bool InsertionAfterSpecifiedNode(int specifiedNode,int data)
+        {
+            Node temp = headNode;
+            bool result = false;
+            if(temp is null)
+            {
+                headNode = new Node(data);
+                result = true;
+            }
+            else
+            {
+                while(temp.next!=null){
+                    if (temp.data == specifiedNode)
+                    {
+                        Node newNode = new Node(data);
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        result = true;
+                        break;
+                    }
+                    else
+                    {
+                        temp = temp.next;
+                    }
+                }
+            }
+            return result;
+        }
+
+        public bool InsertionBeforeSpecifiedNode(int specifiedNode, int data)
+        {
+            bool result = false;
+            Node temp = headNode;
+            if(temp is null)
+            {
+                headNode = new Node(data);
+                result = true;
+            }
+            else
+            {
+                while (temp.next != null)
+                {
+                    if (temp.next.data == specifiedNode)
+                    {
+                        Node newNode = new Node(data);
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        result = true;
+                        break;
+                    }
+                    else
+                    {
+                        temp = temp.next;
+                    }
+                }
+            }
+            return result;
+        }
+        public bool InsertionOnGivenPosition(int position,int data)
+        {
+            position = position - 1;
+            bool result = false;
+            int count = 0;
+            Node temp = headNode;
+            int totalNodesCount = CountNodes()-1;
+            if (temp is null)
+            {
+                headNode = new Node(data);
+            }
+            else
+            {
+                if (position <= 0)
+                {
+                    AddToFront(data);
+                    result = true;
+                    return result;
+                }
+                else if (position>totalNodesCount)
+                {
+                    AddToEnd(data);
+                    result = true;
+                    return result;
+                }
+                else if(position==totalNodesCount)
+                {
+                    Node previousNode = headNode;
+                    while (temp.next != null)
+                    {
+                            previousNode = temp;
+                            temp = temp.next;
+                    }
+                    Node newNode = new Node(data);
+                    newNode.next = temp;
+                    previousNode.next = newNode;
+                    result = true;
+                }
+                else
+                {
+                    Node previousNode = headNode;
+                    while (temp.next != null)
+                    {
+                        if (count == position)
+                        {
+                            Node newNode = new Node(data);
+                            newNode.next = temp;
+                            previousNode.next = newNode;
+                            result = true;
+                            break;
+                        }
+                        else
+                        {
+                            previousNode = temp;
+                            temp = temp.next;
+                            count++;
+                        }
+                    }
+                }
+
             }
             return result;
         }
