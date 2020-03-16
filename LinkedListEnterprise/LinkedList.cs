@@ -139,7 +139,6 @@ namespace LinkedListEnterprise
             }
             return result;
         }
-
         public bool InsertionBeforeSpecifiedNode(int specifiedNode, int data)
         {
             bool result = false;
@@ -232,5 +231,25 @@ namespace LinkedListEnterprise
             }
             return result;
         }
+        public bool DeleteFirstNode()
+        {
+            return true;
+        }
+        public bool DeleteLastNode()
+        {
+            return true;
+        }
+        public bool DeleteSpecificNode(int data)
+        {
+            return true;
+        }
+
+        public void DeleteTheOnlyNode()
+        {
+        }
+        public void DeleteInBetweenNode(int firstNode,int lastNode,int data)
+        {
+        }
+
     }
 }
