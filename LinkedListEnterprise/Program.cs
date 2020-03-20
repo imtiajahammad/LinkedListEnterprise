@@ -92,6 +92,47 @@ namespace LinkedListEnterprise
             Console.WriteLine();
             /**/
 
+            /*delete first node*/
+            bool result4 =linkedList.DeleteFirstNode();
+            if (result4)
+            {
+                Console.WriteLine("DeleteFirstNode complete");
+            }
+            else
+            {
+                Console.WriteLine("DeleteFirstNode failed");
+            }
+            linkedList.PrintAll();
+            /*delete first node*/
+
+
+            /*delete last node*/
+            
+            bool result5 = linkedList.DeleteLastNode();
+            if (result5)
+            {
+                Console.WriteLine("DeleteLastNode complete");
+            }
+            else
+            {
+                Console.WriteLine("DeleteLastNode failed");
+            }
+            linkedList.PrintAll();
+            /*delete last node*/
+
+            /*delete specific node*/
+            bool result6 = linkedList.DeleteSpecificNode(3);
+            if (result6)
+            {
+                Console.WriteLine("DeleteSpecificNode complete");
+            }
+            else
+            {
+                Console.WriteLine("DeleteSpecificNode failed");
+            }
+            linkedList.PrintAll();
+            /*delete specific node*/
+
             Console.ReadKey();
         }
     }

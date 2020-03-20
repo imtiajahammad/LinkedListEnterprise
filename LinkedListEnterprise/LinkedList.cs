@@ -29,7 +29,8 @@ namespace LinkedListEnterprise
         }
         public void PrintAll()
         {
-            if(headNode is null)
+            Console.WriteLine();
+            if (headNode is null)
             {
                 Console.WriteLine("LinkedList is empty");
             }
@@ -43,6 +44,7 @@ namespace LinkedListEnterprise
                     Console.Write(">"+temp.data );
                 }
             }
+            Console.WriteLine();
         }
         public void AddToFront(int data)
         {
@@ -233,19 +235,75 @@ namespace LinkedListEnterprise
         }
         public bool DeleteFirstNode()
         {
-            return true;
+            bool result = false;
+            if(headNode is null)
+            {
+                result = false;
+            }
+            else
+            {
+                headNode = headNode.next;
+                result = true;
+            }
+            return result;
         }
         public bool DeleteLastNode()
         {
-            return true;
+            bool result = false;
+            if(headNode is null)
+            {
+                result = false;
+            }
+            else
+            {
+                Node temp = headNode;
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = null;
+                result = true;
+            }
+            return result;
         }
         public bool DeleteSpecificNode(int data)
         {
-            return true;
+            bool result = false;
+            if(headNode is null)
+            {
+                result = false;
+            }
+            else
+            {
+
+                if (headNode.data == data)
+                {
+                    headNode = headNode.next;
+                    result = true;
+                }
+                else
+                {
+                    Node temp = headNode;
+                    Node previousNode = null;
+                    while (temp.next != null)
+                    {
+                        previousNode = temp;
+                        temp = temp.next;
+                        if (temp.data == data)
+                        {
+                            previousNode.next = temp.next;
+                            result = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            return result;
         }
 
         public void DeleteTheOnlyNode()
         {
+            /*in this case, the list contain only one node and this function needs to delete that*/
         }
         public void DeleteInBetweenNode(int firstNode,int lastNode,int data)
         {
