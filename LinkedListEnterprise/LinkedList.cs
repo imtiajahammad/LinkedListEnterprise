@@ -301,12 +301,45 @@ namespace LinkedListEnterprise
             return result;
         }
 
-        public void DeleteTheOnlyNode()
+        public bool DeleteTheOnlyNode()
         {
-            /*in this case, the list contain only one node and this function needs to delete that*/
+            bool result = false;
+            if (headNode.next == null)
+            {
+                /*in this case, the list contain only one node and this function needs to delete that*/
+                headNode = null;
+                result = true;
+            }
+            return result;
         }
-        public void DeleteInBetweenNode(int firstNode,int lastNode,int data)
+        public bool DeleteInBetweenNode(int firstNode,int lastNode,int data)
         {
+            bool result = false;
+            if (headNode == null)
+            {
+                result = false;
+            }
+            else
+            {
+                Node temp = headNode;
+                while (temp.next != null)
+                {
+                    if (temp.data == firstNode)
+                    {
+                        if (temp.next.next.data == lastNode)
+                        {
+                            if (temp.next.data == data)
+                            {
+                                temp.next = temp.next.next;
+                                result = true;
+                                break;
+                            }
+                        }
+                    }
+                    temp = temp.next;
+                }
+            }
+            return result;
         }
 
     }
