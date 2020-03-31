@@ -133,6 +133,35 @@ namespace LinkedListEnterprise
             linkedList.PrintAll();
             /*delete specific node*/
 
+
+            /*DeleteTheOnlyNode()*/
+            bool result7 = linkedList.DeleteTheOnlyNode();
+            if (result7)
+            {
+                Console.WriteLine("DeleteTheOnlyNode complete");
+            }
+            else
+            {
+                Console.WriteLine("DeleteTheOnlyNode failed");
+            }
+            linkedList.PrintAll();
+            /*DeleteTheOnlyNode()*/
+
+
+            /*DeleteInBetweenNode*/
+            bool result8 = linkedList.DeleteInBetweenNode(1,5,11);
+            if (result8)
+            {
+                Console.WriteLine("DeleteInBetweenNode complete");
+            }
+            else
+            {
+                Console.WriteLine("DeleteInBetweenNode failed");
+            }
+            linkedList.PrintAll();
+            /*DeleteInBetweenNode*/
+            /**//**/
+            /**//**/
             Console.ReadKey();
         }
     }
