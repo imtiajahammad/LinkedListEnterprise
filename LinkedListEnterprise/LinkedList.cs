@@ -234,27 +234,7 @@ namespace LinkedListEnterprise
             return result;
         }
 
-        public LinkedList ReverseLinkedList()
-        {
-            LinkedList returnList = new LinkedList();
-            if (headNode is null)
-            {
-                return returnList;
-                //returnList = null;
-            }
-            else
-            {
-                
-                Node temp = headNode;
-                while (temp.next != null)
-                {
-                    returnList.AddToFront(temp.data);
-                    temp = temp.next;
-                }
-                returnList.AddToFront(temp.data);
-            }
-            return returnList;
-        }
+        
 
         public bool DeleteFirstNode()
         {
@@ -364,10 +344,26 @@ namespace LinkedListEnterprise
             }
             return result;
         }
-        public bool ReverseTheList()
+        public LinkedList ReverseLinkedList()
         {
-            bool result = false;
-            return result;
+            LinkedList returnList = new LinkedList();
+            if (headNode is null)
+            {
+                return returnList;
+                //returnList = null;
+            }
+            else
+            {
+
+                Node temp = headNode;
+                while (temp.next != null)
+                {
+                    returnList.AddToFront(temp.data);
+                    temp = temp.next;
+                }
+                returnList.AddToFront(temp.data);
+            }
+            return returnList;
         }
         public bool BubbleSortByExchangeData()
         {
