@@ -160,7 +160,22 @@ namespace LinkedListEnterprise
             }
             linkedList.PrintAll();
             /*DeleteInBetweenNode*/
-            /**//**/
+
+
+            /*ReverseList*/
+            Console.WriteLine("ReverseList-start");
+            LinkedList result9 = new LinkedList();
+            result9=linkedList.ReverseLinkedList();
+            result9.PrintAll();
+            Console.WriteLine("ReverseList with no node-start");
+            linkedList = new LinkedList();
+            LinkedList result10 = new LinkedList();
+            result10 = linkedList.ReverseLinkedList();
+            result10.PrintAll();
+            Console.WriteLine("ReverseList with no node-end");
+
+            Console.WriteLine("ReverseList-end");
+            /*ReverseList*/
             /**//**/
             Console.ReadKey();
         }

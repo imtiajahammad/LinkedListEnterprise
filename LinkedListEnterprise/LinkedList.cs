@@ -233,6 +233,29 @@ namespace LinkedListEnterprise
             }
             return result;
         }
+
+        public LinkedList ReverseLinkedList()
+        {
+            LinkedList returnList = new LinkedList();
+            if (headNode is null)
+            {
+                return returnList;
+                //returnList = null;
+            }
+            else
+            {
+                
+                Node temp = headNode;
+                while (temp.next != null)
+                {
+                    returnList.AddToFront(temp.data);
+                    temp = temp.next;
+                }
+                returnList.AddToFront(temp.data);
+            }
+            return returnList;
+        }
+
         public bool DeleteFirstNode()
         {
             bool result = false;
@@ -341,6 +364,77 @@ namespace LinkedListEnterprise
             }
             return result;
         }
+        public bool ReverseTheList()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool BubbleSortByExchangeData()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool BubbleSortByExchangeLinks()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool MergeSort()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool InsertCycle()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool DeleteCycle()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool RemoveCycle()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool FindingReferenceToTheLastNode()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool FindingReferenceToTheSecondLastNode()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool FindingReferenceToANodeWithParticularInfo()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool FindingReferenceToPredecessorOfANodeWithParticularInfo()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool FindingReferenceToANodeAtAParticularPosition()
+        {
+            bool result = false;
+            return result;
+        }
+        public bool MakeTwoSortedLinkedListIntoSingleLinkedListWithRecursiveProcedure()
+        {
+            bool result = false;
+            return result;
+        }
+
+
+
+
+
+
 
     }
 }
