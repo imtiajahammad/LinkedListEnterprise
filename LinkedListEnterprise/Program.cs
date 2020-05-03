@@ -179,13 +179,16 @@ namespace LinkedListEnterprise
 
 
             /*Bubble Sort Practice*/
-            int[] array ={11, 51, 81,8, 61, 1, 45};
+            //int[] array ={11, 51, 81,8, 61, 1, 45};
+            int[] array ={1, 5, 8,80, 611, 612, 600};
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write(array[i] + "--");
             }
+            Console.WriteLine();
             for (int loop = 0; loop < array.Length; loop++)
             {
+                bool flag=false;
                 for(int each = 0; each < array.Length-1-loop; each++)
                 {
                     //Console.WriteLine(array[each] + "++" + array[each + 1]);
@@ -194,10 +197,23 @@ namespace LinkedListEnterprise
                         int temp = array[each];
                         array[each] = array[each + 1];
                         array[each + 1] = temp;
+                        flag=true;
                     }
                 }
-                Console.WriteLine();
+            
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + "---");
             }
+            Console.WriteLine(flag);
+            if(flag==false)
+                {
+                    break;
+                }
+            }
+
+
+            Console.WriteLine();
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write(array[i] + "--");
