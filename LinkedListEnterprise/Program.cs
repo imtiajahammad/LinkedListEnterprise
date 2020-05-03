@@ -24,20 +24,20 @@ namespace LinkedListEnterprise
             linkedList.PrintAll();
             /**/
             Console.WriteLine();
-            Console.Write("Total nodes count is "+linkedList.CountNodes());
+            Console.Write("Total nodes count is " + linkedList.CountNodes());
             Console.WriteLine();
             /**/
             int searchResult = linkedList.SearchNode(7);
-            if(searchResult==0)
+            if (searchResult == 0)
             {
                 Console.WriteLine("Not Found");
             }
             else
             {
-                Console.WriteLine("Node found "+searchResult +" times");
+                Console.WriteLine("Node found " + searchResult + " times");
             }
             /**/
-            bool result=linkedList.InsertionInBetweenNodes(11, 3, 5);
+            bool result = linkedList.InsertionInBetweenNodes(11, 3, 5);
             if (result)
             {
                 Console.WriteLine("InsertionInBetweenNodes complete");
@@ -93,7 +93,7 @@ namespace LinkedListEnterprise
             /**/
 
             /*delete first node*/
-            bool result4 =linkedList.DeleteFirstNode();
+            bool result4 = linkedList.DeleteFirstNode();
             if (result4)
             {
                 Console.WriteLine("DeleteFirstNode complete");
@@ -107,7 +107,7 @@ namespace LinkedListEnterprise
 
 
             /*delete last node*/
-            
+
             bool result5 = linkedList.DeleteLastNode();
             if (result5)
             {
@@ -149,7 +149,7 @@ namespace LinkedListEnterprise
 
 
             /*DeleteInBetweenNode*/
-            bool result8 = linkedList.DeleteInBetweenNode(1,5,11);
+            bool result8 = linkedList.DeleteInBetweenNode(1, 5, 11);
             if (result8)
             {
                 Console.WriteLine("DeleteInBetweenNode complete");
@@ -165,7 +165,7 @@ namespace LinkedListEnterprise
             /*ReverseList*/
             Console.WriteLine("ReverseList-start");
             LinkedList result9 = new LinkedList();
-            result9=linkedList.ReverseLinkedList();
+            result9 = linkedList.ReverseLinkedList();
             result9.PrintAll();
             Console.WriteLine("ReverseList with no node-start");
             linkedList = new LinkedList();
@@ -176,7 +176,35 @@ namespace LinkedListEnterprise
 
             Console.WriteLine("ReverseList-end");
             /*ReverseList*/
-            /**//**/
+
+
+            /*Bubble Sort Practice*/
+            int[] array ={11, 51, 81,8, 61, 1, 45};
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + "--");
+            }
+            for (int loop = 0; loop < array.Length; loop++)
+            {
+                for(int each = 0; each < array.Length-1-loop; each++)
+                {
+                    //Console.WriteLine(array[each] + "++" + array[each + 1]);
+                    if (array[each] > array[each + 1])
+                    {
+                        int temp = array[each];
+                        array[each] = array[each + 1];
+                        array[each + 1] = temp;
+                    }
+                }
+                Console.WriteLine();
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + "--");
+            }
+
+
+            /*Bubble Sort Practice*/
             Console.ReadKey();
         }
     }
