@@ -199,8 +199,7 @@ namespace LinkedListEnterprise
                         array[each + 1] = temp;
                         flag=true;
                     }
-                }
-            
+                }            
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write(array[i] + "---");
@@ -210,16 +209,12 @@ namespace LinkedListEnterprise
                 {
                     break;
                 }
-            }
-
-
+            }        
             Console.WriteLine();
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write(array[i] + "--");
             }
-
-
             /*Bubble Sort Practice*/
             Console.ReadKey();
         }
